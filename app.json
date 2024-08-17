@@ -2,6 +2,11 @@
   "expo": {
     "name": "GetOut",
     "slug": "GetOut",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "extra": {
+      "eas": {
+        "projectId": "7c70942d-3ccc-468b-8ba7-984c3df589bb"
+      }
+    }
   }
 }
