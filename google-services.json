@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "237612445002",
+    "project_id": "getout-97f2d",
+    "storage_bucket": "getout-97f2d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237612445002:android:35e9b0ffbe3b13010565b3",
+        "android_client_info": {
+          "package_name": "com.getout.getout"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5NDIKTVH1RaP--KerSnSeb03dgTSvaCk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
