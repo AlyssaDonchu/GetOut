@@ -1,24 +1,24 @@
 // screens/SignInScreen.tsx
-import React, { useState } from 'react';
-import { View, TextInput, Button, StyleSheet, Alert } from 'react-native';
-import { sendSignInLinkToEmail } from 'firebase/auth';
-import { auth } from '../firebaseConfig';
+import React, { useState } from "react";
+import { View, TextInput, Button, StyleSheet, Alert } from "react-native";
+import auth from "@react-native-firebase/auth";
 
 const SignInScreen: React.FC = () => {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
 
   const handleSignIn = () => {
     const actionCodeSettings = {
-      url: 'http://localhost:8081', // Ensure this is correct
+      url: "http://localhost:8081", // Ensure this is correct
       handleCodeInApp: true,
     };
 
-    sendSignInLinkToEmail(auth, email, actionCodeSettings)
+    auth()
+      .sendSignInLinkToEmail(email, actionCodeSettings)
       .then(() => {
-        Alert.alert('Check your email for the sign-in link');
+        Alert.alert("Check your email for the sign-in link");
       })
       .catch((error) => {
-        console.error('Error sending email link:', error);
+        console.error("Error sending email link:", error);
       });
   };
 
@@ -40,12 +40,12 @@ const SignInScreen: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: "center",
     padding: 16,
   },
   input: {
     height: 40,
-    borderColor: 'gray',
+    borderColor: "gray",
     borderWidth: 1,
     marginBottom: 12,
     paddingLeft: 8,

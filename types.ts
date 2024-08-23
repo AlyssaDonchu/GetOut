@@ -16,7 +16,7 @@
 // export type HomeScreenNavigationProp = StackScreenProps<RootStackParamList, 'Home'>;
 
 // types.ts
-import { StackScreenProps } from '@react-navigation/stack';
+import { StackScreenProps } from "@react-navigation/stack";
 
 export type AppEvent = {
   id: string;
@@ -30,7 +30,14 @@ export type RootStackParamList = {
   SignIn: undefined;
   Home: undefined;
   CreateEvent: { addEvent: (event: AppEvent) => void };
+  PhoneSignInScreen: undefined;
 };
 
-export type HomeScreenNavigationProp = StackScreenProps<RootStackParamList, 'Home'>;
-export type CreateEventScreenNavigationProp = StackScreenProps<RootStackParamList, 'CreateEvent'>;
+export type HomeScreenNavigationProp = StackScreenProps<
+  RootStackParamList,
+  "Home"
+>;
+export type CreateEventScreenNavigationProp = StackScreenProps<
+  RootStackParamList,
+  "CreateEvent"
+>;
