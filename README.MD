@@ -12,3 +12,6 @@ To run the project:
 To create an android build:
 
 `npx eas build --profile development --platform android`
+
+Troubleshooting:
+`npm install --force`
