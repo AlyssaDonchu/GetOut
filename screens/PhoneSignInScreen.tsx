@@ -1,10 +1,9 @@
 // screens/SignInScreen.tsx
-import React, { useState } from "react";
+import { useState } from "react";
 import auth from "@react-native-firebase/auth";
 import { View, TextInput, Button, StyleSheet } from "react-native";
-import { useNavigation, NavigationProp } from "@react-navigation/native";
-import { RootStackParamList } from "../types";
-import HomeScreen from "./HomeScreen";
+import { useNavigation } from "@react-navigation/native";
+import { useUserContext } from "../context/userContext";
 
 const PhoneSignIn = ({
   setConfirmationResult,
@@ -39,15 +38,14 @@ const PhoneVerification = ({
 }: {
   confirmationResult: any;
 }) => {
+  const { setUser } = useUserContext();
   const [code, setCode] = useState("");
   const navigation = useNavigation();
   const handleVerify = async () => {
     try {
       if (confirmationResult) {
         const result = await confirmationResult.confirm(code);
-        console.log("result", result);
-
-        // Redirect the user to the desired screen after successful verification
+        setUser(result);
         navigation.navigate("Home");
       }
     } catch (error) {
