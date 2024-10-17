@@ -79,7 +79,7 @@ export default function App() {
           )}
           name="name"
         />
-        <Controller
+        {/* <Controller
           control={control}
           render={({
             field: { onChange, onBlur, value },
@@ -100,6 +100,34 @@ export default function App() {
               message: "Invalid phone number format. Must be 10-14 digits.",
             },
           }}
+          name="phone"
+        /> */}
+        <Controller
+          control={control}
+          render={({
+            field: { value },
+            fieldState: { error },
+          }) => (
+            <View>
+              <Text
+                style={[
+                  styles.phoneText,
+                  {
+                    backgroundColor: '#f0f0f0', // Gray out the field
+                    padding: 10,
+                    width: '90%',
+                    alignSelf: 'center',
+                    borderWidth: 1,
+                    borderColor: '#ccc',
+                    borderRadius: 8,
+                  },
+                ]}
+              >
+                {value}
+              </Text>
+              {error && <Text style={styles.errorText}>{error.message}</Text>}
+            </View>
+          )}
           name="phone"
         />
 
